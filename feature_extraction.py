@@ -119,7 +119,7 @@ def processData(allTweets):
 
         features = {}
 
-        features["urlType"] = allUrls[i]
+        # features["urlType"] = allUrls[i]
 
         if ifStartWithHashtag(tweet):
             features["startWithHashtag"] = True

@@ -10,6 +10,13 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import precision_score
 from sklearn.model_selection import cross_val_score
 
+import pickle
+import os
+
+dest = os.path.join('pickled_classifier', 'pkl_objects')
+if not os.path.exists(dest):
+    os.makedirs(dest)
+
 
 from sklearn.naive_bayes import BernoulliNB
 
@@ -26,10 +33,10 @@ def train_svm(X, y):
     return svm
 
 
-def train_BNB(X, y):
-    bnb = BernoulliNB()
-    bnb.fit(X_train, y_train)
-    return bnb
+# def train_BNB(X, y):
+#     bnb = BernoulliNB()
+#     bnb.fit(X_train, y_train)
+#     return bnb
 
 
 def create_training_data(document):
@@ -40,9 +47,13 @@ def create_training_data(document):
     # Create the document corpus list
     corpus = [d[0] for d in document]
 
+    print(corpus[0])
+
     # Create the TF-IDF vectoriser and transform the corpus
 
     X = vectorizer.fit_transform(corpus)
+
+    print(X)
     return X, y
 
 if __name__ == "__main__":
@@ -73,7 +84,11 @@ if __name__ == "__main__":
 
     # Create and train the Support Vector Machine
     svm = train_svm(X_train, y_train)
-    prediction = svm.predict(X_test)
+    pickle.dump(svm, open(os.path.join(dest, 'classifier.pkl'), 'wb'), protocol=4)
+    pickle.dump(vectorizer, open(os.path.join(dest, 'vect.pkl'), 'wb'), protocol=4)
+
+    clf = pickle.load(open(os.path.join(dest, 'classifier.pkl'), 'rb'))
+    prediction = clf.predict(X_test)
 
     # calculate measurements
     accuracy = accuracy_score(y_test, prediction)
@@ -117,3 +132,7 @@ if __name__ == "__main__":
     # gs = gs.fit(X_train, y_train)
     # print(gs.best_score_)
     # print(gs.best_params_)
+
+
+# save classifier with pickle
+
