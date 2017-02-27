@@ -8,13 +8,9 @@ MarkupSafe==0.23
 nltk==3.2.2
 numpy==1.12.0
 packaging==16.8
-public==0.0.0
 pyparsing==2.1.10
-query-string==0.0.0
-request==0.0.0
 scikit-learn==0.18.1
 scipy==0.18.1
-setupfiles==0.0.0
 six==1.10.0
 virtualenv==15.1.0
 Werkzeug==0.11.15
