@@ -108,17 +108,17 @@ def cleanRepeat(tweet):
 
 def processData(allTweets):
 
-    allUrls = []
-    urls = open("urls.txt", "r")
-    for line in urls:
-        allUrls.append(line[:-1])
+    # allUrls = []
+    # urls = open("urls.txt", "r")
+    # for line in urls:
+    #     allUrls.append(line[:-1])
 
 
     for i, tweet in enumerate(allTweets):
 
         features = {}
 
-        features["urlType"] = allUrls[i]
+        # features["urlType"] = allUrls[i]
 
         if ifStartWithHashtag(tweet):
             features["startWithHashtag"] = True

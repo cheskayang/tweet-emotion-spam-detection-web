@@ -1,7 +1,6 @@
 appdirs==1.4.2
 click==6.7
 Flask==0.12
-get==0.0.0
 gunicorn==19.6.0
 itsdangerous==0.24
 Jinja2==2.9.5
@@ -16,6 +15,7 @@ query-string==0.0.0
 request==0.0.0
 scikit-learn==0.18.1
 scipy==0.18.1
+setupfiles==0.0.0
 six==1.10.0
 virtualenv==15.1.0
 Werkzeug==0.11.15
