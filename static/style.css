@@ -1,0 +1,50 @@
+body {
+    font-size: 1.5em;
+    font-family: Tahoma sans-serif;
+    background: #FFFCE6;
+    color: #4CD4B0;
+}
+
+#prediction {
+    font-family: Calibri sans-serif;
+    color: #7D1424;
+}
+
+textarea {
+    width: 40%;
+    height:100px;
+    font-size: 14px;
+}
+
+#button {
+    background: none;
+    border:none;
+    font-size:1.3em;
+    margin:auto;
+    display:block;
+    color: #FFFCE6;
+    font-family: Tahoma sans-serif;
+    background: #4CD4B0;
+    padding: 10px 20px;
+}
+
+#button:focus {
+    outline:0;
+}
+
+h1 {
+    margin-top: 20vh;
+}
+
+h1, h2, h4, p {
+    text-align: center;
+}
+
+form {
+    margin:auto;
+    align-content: center;
+}
+
+dl {
+    text-align: center;
+}

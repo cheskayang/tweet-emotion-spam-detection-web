@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <title>Twitter Emotion Spam Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+    {% from "_formhelpers.html" import render_field %}
+    <h1>Please input a tweet:</h1>
+
+    <h4>Examples:</h4>
+    <p>CHECK IT OUT http://ebay.to/1E668IW #Anger Inside Out Small #Figure #sales #InsideOut #ebay #shopping</p>
+    <p>Probably spent almost everyday of break with @saraarobertss and we didn't take one picture together #pissed</p>
+
+    <h2 id="prediction"> {{ result }}</h2>
+
+    <form method=post action="/result">
+        <dl>
+            {{ render_field(form.submittedTweet) }}
+        </dl>
+        <input id="button" type=submit value='submit' name='submit_btn'>
+    </form>
+</body>
+</html>

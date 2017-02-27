@@ -12,7 +12,6 @@ from url_classifier import getURLType
 from nltk.tokenize import TweetTokenizer
 from nltk.stem.porter import *
 
-
 featureSets = []
 
 def countNumberOfWords(tweet):
@@ -119,7 +118,7 @@ def processData(allTweets):
 
         features = {}
 
-        # features["urlType"] = allUrls[i]
+        features["urlType"] = allUrls[i]
 
         if ifStartWithHashtag(tweet):
             features["startWithHashtag"] = True
